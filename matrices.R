@@ -69,19 +69,22 @@ rm(list = ls())
 #<------------------------------------->
 
 
-A = matrix(c(20, 30, 40, 30, 40, 50, 40, 50, 90), nrow = 3, byrow = TRUE)
+lingotes = matrix(
+  c(20, 30, 40, 30, 40, 50, 40, 50, 90),
+  nrow = 3, 
+  byrow = TRUE
+)
  
-b = c(34, 46, 67)
+nuevo_lingote = c(34, 46, 67)
 
-solucion = solve(A, b)
- 
-print(solucion)
-
+rm(list = ls())
 
 #<------------------------------------->
 
-
-
+minas = matrix(
+  c(1, 2, 3, 2, 5, 7, 1, 3, 1)
+  
+)
 
 
 
