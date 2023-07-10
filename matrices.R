@@ -82,9 +82,108 @@ rm(list = ls())
 #<------------------------------------->
 
 minas = matrix(
-  c(1, 2, 3, 2, 5, 7, 1, 3, 1)
-  
+  c(1, 2, 3, 2, 5, 7, 1, 3, 1),
+  ncol = 3,
+  byrow = TRUE
 )
+
+colnames(minas) = c("Niquel", "Cobre", "Hierro")
+rownames(minas) = c("Mina A", "Mina B", "Mina C") 
+
+print(minas)
+
+# ¿Cuántas toneladas de cada mina deben utilizarse para obtener 7 toneladas de níquel, 18 de cobre y 16 de hierro?
+
+objetivo = c(7, 18, 16)
+
+resultado = solve(minas, objetivo)
+print (resultado)
+
+rm(list = ls())
+
+#<------------------------------------->
+
+
+hijo_uno = 9 
+
+hijo_dos = 6
+
+
+suma_hijos = (hijo_uno + hijo_dos)
+
+edad_padre = 2*(suma_hijos)
+
+
+
+diferencia_edades = hijo_uno - hijo_dos
+
+suma_hijos_antes = ( suma_hijos - diferencia_edades )
+
+edad_padre_antes = 3*(suma_hijos_antes)
+
+
+# cuando pasen suma_hijos  años suma total de edades = 150
+
+x150 = (edad_padre + suma_hijos) + (hijo_dos + suma_hijos) + (hijo_uno + suma_hijos)
+
+cat(x150)
+
+# cuantos años tenia el padre cuando nacieron los hijos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
