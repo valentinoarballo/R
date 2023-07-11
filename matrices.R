@@ -130,23 +130,24 @@ cat(x150)
 
 # cuantos años tenia el padre cuando nacieron los hijos
 
+rm(list = ls())
 
+#<------------------------------------->
 
+conservas = matrix(
+  c(48, 62, 30, 30, 84, 26),
+  ncol = 3,
+  byrow = TRUE
+)
 
+colnames(conservas) = c("sardinas", "bonitos", "berberechos")
+rownames(conservas) = c("A", "B")
 
+print(conservas)
 
+rm(list = ls())
 
-
-
-
-
-
-
-
-
-
-
-
+#<------------------------------------->
 
 
 
