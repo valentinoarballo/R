@@ -1,3 +1,4 @@
+
 options(echo=FALSE)
 
 separador = function (ejercicio) {
@@ -28,7 +29,7 @@ media_simple(c(4, 6, 8))
 
 separador(2)
 
-media_ponderada(c(0, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3), 5)
+media_ponderada(c(0, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3), c(0.05,0.05,0.05,0.05,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1))
 
 
 
