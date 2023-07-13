@@ -14,14 +14,23 @@ media_simple = function (valores) {
 }
 
 media_ponderada = function (valores, pesos) {
-  productos = c()
+  acumulador = 0
   for (x in 1:length(valores)) {
    valor = valores[x]
    peso = pesos[x]
-    productos = c(productos, (valor*peso))
+   acumulador = acumulador + (valor*peso)
   }
-  return (sum(productos)/sum(pesos))
+  return (acumulador/sum(pesos))
 }
+
+media_armonica = function (valores) {
+  acumulador = 0
+  for (valor in valores) {
+    acumulador = acumulador + (1/valor)
+  }
+  return (length(valores)/acumulador)
+}
+
 
 separador(1)
 
@@ -31,5 +40,6 @@ separador(2)
 
 media_ponderada(c(0, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3), c(0.05,0.05,0.05,0.05,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1))
 
+separador(3)
 
-
+media_armonica(c(1, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3))
