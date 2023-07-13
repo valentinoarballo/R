@@ -44,19 +44,3 @@ media_cuadratica = function (valores) {
 media_geometrica = function (valores) {
   return  (prod(valores)^(1/(length(valores)))) #(geometric.mean(valores))
 }
-
-separador(1)
-
-media_simple(c(4, 6, 8))
-
-separador(2)
-
-media_ponderada(c(0, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3), c(0.05,0.05,0.05,0.05,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1))
-
-separador(3)
-
-media_armonica(c(1, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3))
-
-separador(4)
-
-media_cuadratica(c(1, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3))
