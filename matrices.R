@@ -104,14 +104,14 @@ rm(list = ls())
 #<------------------------------------->
 
 
-hijo_uno = 9 
+hijo_uno = 20
 
-hijo_dos = 6
+hijo_dos = 5
 
 
 suma_hijos = (hijo_uno + hijo_dos)
 
-edad_padre = 2*(suma_hijos)
+edad_padre = (suma_hijos)*2
 
 
 
@@ -119,7 +119,7 @@ diferencia_edades = hijo_uno - hijo_dos
 
 suma_hijos_antes = ( suma_hijos - diferencia_edades )
 
-edad_padre_antes = 3*(suma_hijos_antes)
+edad_padre_antes = (suma_hijos_antes)*3
 
 
 # cuando pasen suma_hijos  años suma total de edades = 150
