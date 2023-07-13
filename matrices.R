@@ -130,21 +130,60 @@ cat(x150)
 
 # cuantos años tenia el padre cuando nacieron los hijos
 
+rm(list = ls())
 
+#<------------------------------------->
 
+conservas = matrix(
+  c(48, 62, 30, 30, 84, 26),
+  ncol = 3,
+  byrow = TRUE
+)
 
+# las ventas totales de la semana son igual a 
+# el total de latas vendidas por dia multiplicado por 5 
+# mas las ventas del sabado que son la mitad 
+ventas_semanales = sum(conservas) * 5 + sum(conservas)/2
 
+colnames(conservas) = c("sardinas", "bonitos", "berberechos")
+rownames(conservas) = c("A", "B")
 
+cat("por dia se venden", sum(conservas), "latas")
+cat("por semana se venden", ventas_semanales, "latas")
 
+rm(list = ls())
 
+#<------------------------------------->
 
+bandejas = matrix(
+  c(40, 160, 80, 120, 120, 120, 150, 80, 80),
+  ncol = 3,
+  byrow = TRUE
+)
 
+colnames(bandejas) = c("fontina", "roquefort", "camembert")
+rownames(bandejas) = c("A", "B", "C")
 
+ventas = matrix(
+  c(50, 50, 50),
+  ncol = 3
+)
 
+precios = matrix(
+  c(50, 60, 70),
+  nrow = 3
+)
 
+gramos_vendidos = ventas %*% bandejas
 
+kg_vendidos = gramos_vendidos %/% c(1000, 1000, 1000)
 
-
+importe_por_queso = precios %*% kg_vendidos
+print(precios)
+print(kg_vendidos)
+print(importe_por_queso)
+  
+cat("kg de fontina, roquefort y camembert vendidos respectivamente",kg_vendidos)
 
 
 
