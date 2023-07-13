@@ -46,4 +46,19 @@ media_geometrica = function (valores) {
 }
 
 separador(1)
+media_simple(c(4, 6, 8))
+media_simple(c(14, 16, 18))
+media_simple(c(100, 120, 180, 200))
+
+separador(2)
+
 media_simple(c(0, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3))
+media_ponderada(c(0, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3), c(0.05,0.05,0.05,0.05,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1))
+media_armonica(c(0, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3))
+media_cuadratica(c(0, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3))
+media_geometrica(c(0, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3))
+
+
+media_simple(c(4, 1, 3, 0, 0, 3, 2, 2, 1, 3, 4, 1))
+
+
