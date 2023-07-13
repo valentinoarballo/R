@@ -1,4 +1,5 @@
-
+install.packages("psych")
+library("psych")
 options(echo=FALSE)
 
 separador = function (ejercicio) {
@@ -40,6 +41,10 @@ media_cuadratica = function (valores) {
   return (sqrt(acumulador/length(valores)))
 }
 
+media_geometrica = function (valores) {
+  return  (prod(valores)^(1/(length(valores)))) #(geometric.mean(valores))
+}
+
 separador(1)
 
 media_simple(c(4, 6, 8))
@@ -54,4 +59,4 @@ media_armonica(c(1, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3))
 
 separador(4)
 
-media_cuadratica(c(0, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3))
+media_cuadratica(c(1, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3))
