@@ -44,3 +44,6 @@ media_cuadratica = function (valores) {
 media_geometrica = function (valores) {
   return  (prod(valores)^(1/(length(valores)))) #(geometric.mean(valores))
 }
+
+separador(1)
+media_simple(c(0, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3))
