@@ -31,6 +31,14 @@ media_armonica = function (valores) {
   return (length(valores)/acumulador)
 }
 
+media_cuadratica = function (valores) {
+  acumulador = 0
+  for (valor in valores) {
+    acumulador = acumulador + (valor^2)
+  }
+  
+  return (sqrt(acumulador/length(valores)))
+}
 
 separador(1)
 
@@ -43,3 +51,7 @@ media_ponderada(c(0, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3), c(0.05,0.05,0.05,0.05,0.1
 separador(3)
 
 media_armonica(c(1, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3))
+
+separador(4)
+
+media_cuadratica(c(0, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3))
