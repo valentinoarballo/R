@@ -90,4 +90,8 @@ valores5 = c(69, 73, 65, 70, 71, 74, 65, 69, 60, 62)
 cat("En un estudio que se realizó en un asilo de ancianos, se tomó las edades de los que pueden caminar sin dificultades. Calcular las principales medidas de dispersión\nLos datos: ", valores5)
 principales_medidas_dispercion(valores5)
 
+separador(6)
+valores6 = c(3, 3, 4, 1, 1, 2, 2, 2, 5, 1, 4, 5, 1, 5, 3, 5, 1, 4, 1, 2, 2, 1, 2, 3, 5)
+cat("Se escogió un salón de clases de cuarto grado, con un total de 25 estudiantes, y se les pidió que calificaran del 1 al 5 un programa televisivo.\ Estos fueron los resultados:", valores6)
+  
 rm(list = ls())
