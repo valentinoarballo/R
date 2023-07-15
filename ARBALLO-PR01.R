@@ -144,7 +144,16 @@ cat("media ", media(valores9))
 mediana(valores9)
 cat("moda: ", moda(valores9))
 
-
+separador(10)
+cat("Se escogió un salón de clases de cuarto grado, con un total de 25 estudiantes, y se les pidió que
+calificaran del 1 al 5 un programa televisivo. Estos fueron los resultados:")
+valores10 = c(3, 3, 4, 1, 1, 2, 2, 2, 5, 1, 4, 5, 1 ,5, 3, 5, 1, 4, 1, 2, 2, 1, 2, 3, 5)
+cat(valores10)
+cat("Buscar la media, la moda y la mediana e indicar si es muestra o población.")
+cat("es poblacion.")
+cat("media ", media(valores10))
+mediana(valores10)
+cat("moda: ", moda(valores10))
 
 
 
