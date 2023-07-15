@@ -66,11 +66,17 @@ desviacion_tipica = function (valores, poblacion = TRUE) {
   }
 }
 
-principales_medidas_dispercion = function (valores) {
+principales_medidas_dispercion = function (valores, poblacion = TRUE) {
   cat(desviacion_media(valores), "\n")
   cat(rango(valores), "\n")
-  cat(desviacion_tipica(valores), "\n")
-  cat(varianza(valores), "\n")
+  if (!poblacion){
+    cat(desviacion_tipica(valores, poblacion = FALSE), "\n")
+    cat(varianza(valores, poblacion = FALSE), "\n")  
+  } else {
+    cat(desviacion_tipica(valores), "\n")
+    cat(varianza(valores), "\n")
+  }
+  
 }
 
 calcular_todo = function (valores) {
@@ -93,5 +99,13 @@ principales_medidas_dispercion(valores5)
 separador(6)
 valores6 = c(3, 3, 4, 1, 1, 2, 2, 2, 5, 1, 4, 5, 1, 5, 3, 5, 1, 4, 1, 2, 2, 1, 2, 3, 5)
 cat("Se escogió un salón de clases de cuarto grado, con un total de 25 estudiantes, y se les pidió que calificaran del 1 al 5 un programa televisivo.\ Estos fueron los resultados:", valores6)
-principales_medidas_dispercion(valores6)  
+principales_medidas_dispercion(valores6)
+
+separador(7)
+#holy
+
+separador(8)
+valores8 = c(6, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 11)
+cat("un siquiatra local ha considerado una muestra aleatoria de 20 niños, anotando el tiempo necesario que requiere en cada niño para lograr un plan integral del tratamiento.\n Obteniéndose lo siguiente (en horas):", valores8)
+
 rm(list = ls())
