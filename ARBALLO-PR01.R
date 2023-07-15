@@ -59,7 +59,7 @@ mediana = function (valores) {
     mediana = mean(valores_ordenados[c(n/2, n/2+1)])
   }
   cat("valores ordenados:", valores_ordenados, "\n")
-  return (mediana)
+  cat("mediana: ", mediana)
 }
 
 separador(3)
@@ -76,66 +76,73 @@ cat("Calcula la media de los siguientes datos. Calcular TODOS los tipos de media
 valoresA4 = c(0, 2, 3, 4, 3, 1, 4, 3, 3, 4, 1, 3)
 pesos = c(0.05,0.05,0.05,0.05,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1)
 cat("a)", valoresA4)
-media(valoresA4)
-media_ponderada(valoresA4, pesos)
-media_armonica(valoresA4)
-media_cuadratica(valoresA4)
-media_geometrica(valoresA4)
+cat("media ", media(valoresA4))
+cat("media ponderada: ", media_ponderada(valoresA4, pesos))
+cat("media armonica: ", media_armonica(valoresA4))
+cat("media cuadratica: ", media_cuadratica(valoresA4))
+cat("media geometrica: ", media_geometrica(valoresA4))
 valoresB4 = c(4, 1, 3, 0, 0, 3, 2, 2, 1, 3, 4, 1)
 cat("b)", valoresB4)
-media(valoresB4)
-media_ponderada(valoresB4, pesos)
-media_armonica(valoresB4)
-media_cuadratica(valoresB4)
-media_geometrica(valoresB4)
+cat("media ", media(valoresB4))
+cat("media ponderada: ", media_ponderada(valoresB4, pesos))
+cat("media armonica: ", media_armonica(valoresB4))
+cat("media cuadratica: ", media_cuadratica(valoresB4))
+cat("media geometrica: ", media_geometrica(valoresB4))
 
 separador(5)
 cat("Calcula la media de los siguientes datos")
 valoresA5 = c(2.4, 3, 1.1, 4, 3.5, 0.7, 0, 2.8, 3.8, 0.2, 2.8, 1.9)
 valoresB5 = c(0.6, 3.8, 3.1, 4, 2.8, 0.2, 0.4, 3.1, 1.5, 1.9, 1.8, 3.1)
 cat("a)" , valoresA5)
-media(valoresA5)
-media_ponderada(valoresA5, pesos)
-media_armonica(valoresA5)
-media_cuadratica(valoresA5)
-media_geometrica(valoresA5)
+cat("media ", media(valoresA5))
+cat("media ponderada: ", media_ponderada(valoresA5, pesos))
+cat("media armonica: ", media_armonica(valoresA5))
+cat("media cuadratica: ", media_cuadratica(valoresA5))
+cat("media geometrica: ", media_geometrica(valoresA5))
 cat("a)" , valoresB5)
-media(valoresB5)
-media_ponderada(valoresB5, pesos)
-media_armonica(valoresB5)
-media_cuadratica(valoresB5)
-media_geometrica(valoresB5)
+cat("media ", media(valoresB5))
+cat("media ponderada: ", media_ponderada(valoresB5, pesos))
+cat("media armonica: ", media_armonica(valoresB5))
+cat("media cuadratica: ", media_cuadratica(valoresB5))
+cat("media geometrica: ", media_geometrica(valoresB5))
 
 separador(6)
 cat("Buscar la moda para los siguientes datos")
 valoresA6 = c(2, 4, 3, 0, 2, 1, 1, 2, 3, 3, 3, 1)
 valoresB6 = c(1, 1, 0, 1, 4, 0, 1, 3, 4, 0, 1, 2)
 cat("a)", valoresA6)
-moda(valoresA6)
+cat("moda: ", moda(valoresA6))
 cat("b)", valoresB6)
-moda(valoresB6)
+cat("moda: ", moda(valoresB6))
 
 separador(7)
 cat("Buscar la media, la mediana y la moda de los siguientes números:")
 
 valores7 = c(25, 15, 28, 29, 25, 26, 21, 26)
-media(valores7)
+cat("media ", media(valores7))
 mediana(valores7)
-moda(valores7)
+cat("moda: ", moda(valores7))
 
 separador(8)
 cat("Buscar la media, la mediana y la moda de los siguientes números:")
 valores8 = c(15, 16, 19, 15, 14, 16, 20, 15, 17)
-media(valores8)
+cat("media ", media(valores8))
 mediana(valores8)
-moda(valores8)
+cat("moda: ", moda(valores8))
 
 
+separador(9)
+cat("En un estudio que se realizó en un asilo de ancianos, se tomó las edades de los que pueden caminar
+sin dificultades. Buscar la media, la mediana y la moda de las siguientes edades, e indicar si es
+muestra o población. No utilice la fórmula.")
 
 
-
-
-
+cat("a menos que en el asilo vivan 10 personas estos datos solo representan un muestra")
+valores9 = c(69, 73, 65, 70, 71, 74, 65, 69, 60, 62)
+cat(valores9)
+cat("media ", media(valores9))
+mediana(valores9)
+cat("moda: ", moda(valores9))
 
 
 
