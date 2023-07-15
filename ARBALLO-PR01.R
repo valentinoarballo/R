@@ -115,7 +115,6 @@ moda(valoresA6)
 cat("b)", valoresB6)
 moda(valoresB6)
 
-
 separador(7)
 cat("Buscar la media, la mediana y la moda de los siguientes números:")
 
@@ -124,10 +123,12 @@ media(valores7)
 mediana(valores7)
 moda(valores7)
 
-
-
-
-
+separador(8)
+cat("Buscar la media, la mediana y la moda de los siguientes números:")
+valores8 = c(15, 16, 19, 15, 14, 16, 20, 15, 17)
+media(valores8)
+mediana(valores8)
+moda(valores8)
 
 
 
