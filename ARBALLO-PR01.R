@@ -138,5 +138,5 @@ valores10 = c(3, 3, 4, 1, 1, 2, 2, 2, 5, 1, 4, 5, 1 ,5, 3, 5, 1, 4, 1, 2, 2, 1, 
 cat("Se escogió un salón de clases de cuarto grado, con un total de 25 estudiantes, y se les pidió que calificaran del 1 al 5 un programa televisivo. Estos fueron los resultados:\n", valores10, "\nBuscar la media, la moda y la mediana e indicar si es muestra o población.\nRta: Es poblacion.")
 media_moda_mediana(valores10)
 
-
+rm(list = ls())
 
