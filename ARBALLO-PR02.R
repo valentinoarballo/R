@@ -66,12 +66,21 @@ desviacion_tipica = function (valores, poblacion = TRUE) {
   }
 }
 
+calcular_todo = function (valores) {
+  cat("media: ",media(valores), "\n")
+  cat(moda(valores), "\n")
+  cat(mediana(valores), "\n")
+  cat(desviacion_media(valores), "\n")
+  cat(rango(valores), "\n")
+  cat(desviacion_tipica(valores), "\n")
+  cat(varianza(valores), "\n")
+}
+
+
 valores4 = c(28, 29, 28, 30, 30, 29, 30, 31, 29, 29, 30, 31, 31, 31, 32, 33, 34, 34, 35, 31, 31, 32, 32, 33, 33, 31, 32, 32, 33, 33, 34)
 cat("Las temperaturas máximas en una ciudad durante el mes de enero fueron:\n", valores4, "\n")
-desviacion_media(valores4)
-rango(valores4)
-desviacion_tipica(valores4)
-varianza(valores4)
+calcular_todo(valores4)
+
 
 # Calcula la desviación típica
 
