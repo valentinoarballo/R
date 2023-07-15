@@ -16,8 +16,10 @@ media = function (valores) {
   for (valor in valores) {
     acumulador = acumulador + valor
   }
-  return (acumulador/length(valores))
+  media = (acumulador/length(valores))
+  cat("media: ", media)
 }
+
 
 media_ponderada = function (valores, pesos) {
   acumulador = 0
@@ -26,29 +28,36 @@ media_ponderada = function (valores, pesos) {
    peso = pesos[x]
    acumulador = acumulador + (valor*peso)
   }
-  return (acumulador/sum(pesos))
+  media_ponderada = (acumulador/sum(pesos))
+  cat("media_ponderada: ", media_ponderada)
 }
+
 
 media_armonica = function (valores) {
   acumulador = 0
   for (valor in valores) {
     acumulador = acumulador + (1/valor)
   }
-  return (length(valores)/acumulador)
+  media_armonica = (length(valores)/acumulador)
+  cat("media_armonica: ", media_armonica)
 }
+
 
 media_cuadratica = function (valores) {
   acumulador = 0
   for (valor in valores) {
     acumulador = acumulador + (valor^2)
   }
-  
-  return (sqrt(acumulador/length(valores)))
+  media_cuadratica = (sqrt(acumulador/length(valores)))
+  cat("media_cuadratica: ", media_cuadratica)
 }
 
+
 media_geometrica = function (valores) {
-  return  (prod(valores)^(1/(length(valores)))) #(geometric.mean(valores))
+  media_geometrica = (prod(valores)^(1/(length(valores)))) #(geometric.mean(valores))
+  cat("media_geometrica: ", media_geometrica)
 }
+
 
 mediana = function (valores) {
   valores_ordenados = sort(valores)
@@ -61,6 +70,7 @@ mediana = function (valores) {
   cat("valores ordenados:", valores_ordenados, "\n")
   cat("mediana: ", mediana)
 }
+
 
 separador(3)
 cat("Calcula la media simple en cada caso:")
