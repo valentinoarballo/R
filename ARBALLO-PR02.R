@@ -126,14 +126,15 @@ separador(9)
 valores9 = c(10.5, 11.3, 11.9, 12, 12.3, 12.3, 12.5, 12.7, 13.4, 13.7, 13.8, 14.2, 14.8, 15.1, 15.3, 16.7, 16.8, 18.8, 20.8)
 cat("Dos profesores están interesados en estudiar los hábitos de sueño de los estudiantes en sus clases.\n Los datos del Profesor B son los siguientes:", valores9)
 
-valoresDataFrame = data.frame(tiempos = valores9,
-                              grupo = rep("Grupo 1", length(valores9))
+valoresDataFrame = data.frame(minutos = valores9,
+                              alumnos = rep("alumnos que se duermen en clase", length(valores9))
                             )
 
-ggplot(valoresDataFrame, aes(x = grupo, y = tiempos)) + 
+ggplot(valoresDataFrame, aes(x = alumnos, y = minutos)) + 
   geom_boxplot() +
-  scale_y_continuous(limits = c(10, 22), expand = c(0, 0), breaks = seq(10, 22, 1))
-
+  scale_y_continuous(limits = c(10, 22), breaks = seq(10, 22, 1))
+# la funcion "scale_y_continuous" la uso para poner limites en la escala vertical (10 a 22)
+# la precision de la escala (1) es para los valores de los intervalos (12, 13, 14, ..., 22)
 
 
 
