@@ -108,4 +108,7 @@ separador(8)
 valores8 = c(6, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 11)
 cat("un siquiatra local ha considerado una muestra aleatoria de 20 niños, anotando el tiempo necesario que requiere en cada niño para lograr un plan integral del tratamiento.\n Obteniéndose lo siguiente (en horas):", valores8)
 
+
+
+
 rm(list = ls())
