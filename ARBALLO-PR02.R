@@ -79,11 +79,15 @@ principales_medidas_dispercion = function (valores, poblacion = TRUE) {
   
 }
 
-calcular_todo = function (valores) {
+calcular_todo = function (valores, poblacion = TRUE) {
   cat("media: ",media(valores), "\n")
   cat(moda(valores), "\n")
   cat(mediana(valores), "\n")
-  principales_medidas_dispercion(valores)
+  if (!poblacion){
+    principales_medidas_dispercion(valores, poblacion = FALSE)
+  } else {
+    principales_medidas_dispercion(valores)
+  }
 }
 
 separador(4)
@@ -107,8 +111,15 @@ separador(7)
 separador(8)
 valores8 = c(6, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 11)
 cat("un siquiatra local ha considerado una muestra aleatoria de 20 niños, anotando el tiempo necesario que requiere en cada niño para lograr un plan integral del tratamiento.\n Obteniéndose lo siguiente (en horas):", valores8)
+calcular_todo(valores8, poblacion = FALSE)
 
-
+boxplot(valores8, 
+        names = c("niños"),
+        main = "Diagrama de Cajas",
+        xlab = "Grupo de niños analizado",
+        ylab = "tiempo necesario que requiere en cada niño",
+        col = c("red"),
+        border = "black")
 
 
 rm(list = ls())
