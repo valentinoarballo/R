@@ -124,9 +124,6 @@ ggplot(valores8DataFrame, aes(x = kids, y = houras)) +
 # la funcion "scale_y_continuous" la uso para poner limites en la escala vertical (10 a 22)
 # la precision de la escala (1) es para los valores de los intervalos (12, 13, 14, ..., 22)
 
-
-
-
 separador(9)
 valores9 = c(10.5, 11.3, 11.9, 12, 12.3, 12.3, 12.5, 12.7, 13.4, 13.7, 13.8, 14.2, 14.8, 15.1, 15.3, 16.7, 16.8, 18.8, 20.8)
 cat("Dos profesores están interesados en estudiar los hábitos de sueño de los estudiantes en sus clases.\n Los datos del Profesor B son los siguientes:", valores9)
@@ -138,7 +135,41 @@ ggplot(valores9DataFrame, aes(x = alumnos, y = minutos)) +
   scale_y_continuous(limits = c(10, 22), breaks = seq(10, 22, 1))
 
 
+separador(10)
+
+cat("En una empresa se seleccionaron cinco trabajadores, se anotaron sus años de servicio y el tiempo en horas solicitado en el último mes. Los resultados obtenidos fueron:")
+servicio10 = c(1, 3, 2, 4, 5, 4)
+horas10 = c(1, 1, 3, 4, 6, 5)
+
+# a) Representa los datos anteriores.
+# c) Calcular el coeficiente de correlación e interprétalo en términos de la situación real.
+
+valores10DataFrame = data.frame(horas10, servicio10)
+
+df <- data.frame(servicio10, horas10)
+
+# Graficar correlación utilizando ggplot2
+ggplot(df, aes(x = servicio10, y = horas10)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Correlación entre Servicio y Horas",
+       x = "Servicio", y = "Horas") +
+  geom_text(x = 3.5, y = 1, label = paste("Correlación:", round(correlacion, 2)),
+            hjust = -0.2, vjust = 0, color = "black") +
+  theme_minimal()
 
 
-rm(valoresDataFrame)
+
+
+
+
+
+
+
+
+
+
+
+
+
 rm(list = ls())
