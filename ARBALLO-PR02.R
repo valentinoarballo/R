@@ -47,11 +47,11 @@ varianza = function (valores, poblacion = TRUE){
   # si es poblacion
   if (poblacion) {
     # dividir por la cantidad de datos
-    cat("varianza:", acumulador/length(valores))
+    cat("varianza:", acumulador/length(valores), "\n")
     cat("varianza R:", var(valores))
   } else { # si es una muestra
     # dividir pero antes restarle 1 a length(valores)
-    cat("varianza:", acumulador/(length(valores)-1))
+    cat("varianza:", acumulador/(length(valores)-1), "\n")
     cat("varianza R:", var(valores, na.rm = TRUE))
   }
 }
@@ -59,9 +59,11 @@ varianza = function (valores, poblacion = TRUE){
 desviacion_tipica = function (valores, poblacion = TRUE) {
   acumulador = sum((valores - media(valores))^2)
   if (poblacion) {
-    cat("desviacion tipica:", sqrt(acumulador/length(valores)))  
+    cat("desviacion tipica:", sqrt(acumulador/length(valores)), "\n")  
+    cat("desviacion tipica R:", sd(valores))
   } else {
-    cat("desviacion tipica:", sqrt(acumulador/(length(valores)-1)))
+    cat("desviacion tipica:", sqrt(acumulador/(length(valores)-1)), "\n")
+    cat("desviacion tipica R:", sd(valores, na.rm = TRUE))
   }
 }
 
