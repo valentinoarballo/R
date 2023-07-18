@@ -30,16 +30,16 @@ mediana = function (valores) {
     # agarro los dos valores adyacentes al centro y le asigno a mediana el promedio de estos dos 
     mediana = mean(valores_ordenados[c(n/2, n/2+1)])
   }
-  cat("mediana: ", mediana)
+  cat("mediana:", mediana)
+  cat("\nmediana R:", median(valores))
 }
 
-mediana(c(3, 7, 9, 12, 15, 18, 21))
+mediana(c( 21, 13, 2, 45 ,545,54,8,12,15,12,13,564,152,215615315321,9999999999999999999999999999999))
 
 desviacion_media = function (valores){
   # imprimo la sumatoria de diferencias asolutas de cada valor a su media dividido por length de valores
   cat("desviacion media:", sum(abs(valores - media(valores)))/length(valores))
 }
-
 
 varianza = function (valores, poblacion = TRUE){
   # acumulador representa la sumatoria de diferencias al cuadrado  
@@ -48,7 +48,6 @@ varianza = function (valores, poblacion = TRUE){
   if (poblacion) {
     # dividir por la cantidad de datos
     cat("varianza:", acumulador/length(valores), "\n")
-    cat("varianza R:", var(valores))
   } else { # si es una muestra
     # dividir pero antes restarle 1 a length(valores)
     cat("varianza:", acumulador/(length(valores)-1), "\n")
@@ -59,8 +58,7 @@ varianza = function (valores, poblacion = TRUE){
 desviacion_tipica = function (valores, poblacion = TRUE) {
   acumulador = sum((valores - media(valores))^2)
   if (poblacion) {
-    cat("desviacion tipica:", sqrt(acumulador/length(valores)), "\n")  
-    cat("desviacion tipica R:", sd(valores))
+    cat("desviacion tipica:", sqrt(acumulador/length(valores)), "\n")
   } else {
     cat("desviacion tipica:", sqrt(acumulador/(length(valores)-1)), "\n")
     cat("desviacion tipica R:", sd(valores, na.rm = TRUE))
