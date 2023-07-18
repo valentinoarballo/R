@@ -118,6 +118,8 @@ calcular_todo(valores8, poblacion = FALSE)
 valores8DataFrame = data.frame(houras = valores8, kids = rep("niñ@s con mala conducta", length(valores8)))
 # paso los datos a un data frame para tener una especie de matriz pero que cada fila represente una variable/dato y cada columna una instancia de datos
 
+
+# con la libreria ggplot especifico las variables que voy a usar para representar los ejes del grafico, con la funcion aes()
 ggplot(valores8DataFrame, aes(x = kids, y = houras)) + 
   geom_boxplot() +
   scale_y_continuous(limits = c(6, 11), breaks = seq(6, 11, 1))
@@ -141,35 +143,16 @@ cat("En una empresa se seleccionaron cinco trabajadores, se anotaron sus años d
 servicio10 = c(1, 3, 2, 4, 5, 4)
 horas10 = c(1, 1, 3, 4, 6, 5)
 
-# a) Representa los datos anteriores.
-# c) Calcular el coeficiente de correlación e interprétalo en términos de la situación real.
+correlacion10 <- cor(servicio10, horas10)
 
-valores10DataFrame = data.frame(horas10, servicio10)
+correlacion10DataFrame <- data.frame(servicio10, horas10)
 
-df <- data.frame(servicio10, horas10)
-
-# Graficar correlación utilizando ggplot2
-ggplot(df, aes(x = servicio10, y = horas10)) +
+# grafico la correlacion con ggplot2
+ggplot(correlacion10DataFrame, aes(x = servicio10, y = horas10)) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
-  labs(title = "Correlación entre Servicio y Horas",
-       x = "Servicio", y = "Horas") +
-  geom_text(x = 3.5, y = 1, label = paste("Correlación:", round(correlacion, 2)),
-            hjust = -0.2, vjust = 0, color = "black") +
+  labs(title = "Correlación entre Servicio y Horas", x = "Servicio", y = "Horas") +
+  geom_text(x = 3.5, y = 1, label = paste("Correlación:", round(correlacion10, 2)), color = "black") +
   theme_minimal()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-rm(list = ls())
+rm(df)
