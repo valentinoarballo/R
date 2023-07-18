@@ -15,53 +15,49 @@ moda = function(x) {
 }
 
 media = function (valores) {
-  acumulador = 0
-  for (valor in valores) {
-    acumulador = acumulador + valor
-  }
-  media = (acumulador/length(valores))
+  media = (sum(valores)/length(valores))
   return (media)
 }
-
-media(c(5, 10, 15))
 
 mediana = function (valores) {
   valores_ordenados = sort(valores)
   n = length(valores_ordenados)
+  # si n es impar 
   if (n %% 2 == 1) {
+    # se le asigna a mediana el valor unico central del conjunto de datos
     mediana = valores_ordenados[(n+1)/2]
-  } else {
+  } else { # si es par
+    # agarro los dos valores adyacentes al centro y le asigno a mediana el promedio de estos dos 
     mediana = mean(valores_ordenados[c(n/2, n/2+1)])
   }
-  cat("valores ordenados:", valores_ordenados, "\n")
   cat("mediana: ", mediana)
 }
 
+mediana(c(3, 7, 9, 12, 15, 18, 21))
+
 desviacion_media = function (valores){
-  acumulador = 0
-  for (valor in valores) {
-    acumulador = acumulador + abs(valor - media(valores)) 
-  }
-  cat("desviacion media:", acumulador/length(valores))
+  # imprimo la sumatoria de diferencias asolutas de cada valor a su media dividido por length de valores
+  cat("desviacion media:", sum(abs(valores - media(valores)))/length(valores))
 }
 
+
 varianza = function (valores, poblacion = TRUE){
-  acumulador = 0
-  for (valor in valores) {
-    acumulador = acumulador + (valor - media(valores))^2
-  }
+  # acumulador representa la sumatoria de diferencias al cuadrado  
+  acumulador = sum((valores - media(valores))^2)
+  # si es poblacion
   if (poblacion) {
-  cat("varianza:", acumulador/length(valores))
-  } else {
+    # dividir por la cantidad de datos
+    cat("varianza:", acumulador/length(valores))
+    cat("varianza R:", var(valores))
+  } else { # si es una muestra
+    # dividir pero antes restarle 1 a length(valores)
     cat("varianza:", acumulador/(length(valores)-1))
+    cat("varianza R:", var(valores, na.rm = TRUE))
   }
 }
 
 desviacion_tipica = function (valores, poblacion = TRUE) {
-  acumulador = 0
-  for (valor in valores) {
-    acumulador = acumulador + (valor - media(valores))^2
-  }
+  acumulador = sum((valores - media(valores))^2)
   if (poblacion) {
     cat("desviacion tipica:", sqrt(acumulador/length(valores)))  
   } else {
@@ -69,6 +65,7 @@ desviacion_tipica = function (valores, poblacion = TRUE) {
   }
 }
 
+# hago una funcion para llamar funciones, asi es mas comodo si necesito conocer todas las medidas de dispersion
 principales_medidas_dispercion = function (valores, poblacion = TRUE) {
   cat(desviacion_media(valores), "\n")
   cat(rango(valores), "\n")
@@ -79,9 +76,9 @@ principales_medidas_dispercion = function (valores, poblacion = TRUE) {
     cat(desviacion_tipica(valores), "\n")
     cat(varianza(valores), "\n")
   }
-  
 }
 
+# esta funcion llama a la media, moda y mediana ademas de llamar a la funcion de arriba
 calcular_todo = function (valores, poblacion = TRUE) {
   cat("media: ",media(valores), "\n")
   cat(moda(valores), "\n")
