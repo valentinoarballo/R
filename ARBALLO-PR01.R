@@ -17,7 +17,8 @@ media = function (valores) {
     acumulador = acumulador + valor
   }
   media = (acumulador/length(valores))
-  cat("media: ", media)
+  cat("media:", media)
+  cat("media funcion R:", mean(valores))
 }
 
 media_ponderada = function (valores, pesos) {
