@@ -63,7 +63,6 @@ mediana = function (valores) {
   } else {
     mediana = mean(valores_ordenados[c(n/2, n/2+1)])
   }
-  cat("valores ordenados:", valores_ordenados, "\n")
   cat("mediana: ", mediana)
 }
 
@@ -139,5 +138,12 @@ valores10 = c(3, 3, 4, 1, 1, 2, 2, 2, 5, 1, 4, 5, 1 ,5, 3, 5, 1, 4, 1, 2, 2, 1, 
 cat("Se escogió un salón de clases de cuarto grado, con un total de 25 estudiantes, y se les pidió que calificaran del 1 al 5 un programa televisivo. Estos fueron los resultados:\n", valores10, "\nBuscar la media, la moda y la mediana e indicar si es muestra o población.\nRta: Es poblacion.")
 media_moda_mediana(valores10)
 
+separador(11)
+cat("En una importante empresa láctea hay: 600 empleados que cobran $400, 500 que cobran $600, 100 que cobran $2200, 5 socios que perciben $100000 cada uno.")
+
+valores11 = c(rep(400, 600), rep(600, 500), rep(2200, 100), rep(100000, 5))
+media_moda_mediana(valores11)
+
 rm(list = ls())
+
 
