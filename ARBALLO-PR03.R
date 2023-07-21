@@ -23,9 +23,3 @@ ggplot(puntuacionesDataFrame, aes(x = puntuaciones, y = frecuencias)) +
   scale_y_continuous(limits = c(0, 6), breaks = seq(0, 6, by = 1))
 
 rm(list = ls())
-
-ggplot(puntuacionesDataFrame, aes(x = puntuaciones, y = frecuencias)) +
-  geom_freqpoly(binwidth = 1, colour = "blue", linewidth = 1.5) +
-  labs(title = "Gráfico de Frecuencia de Puntuaciones",
-       x = "Puntuaciones",
-       y = "Frecuencias")
