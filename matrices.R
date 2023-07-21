@@ -1,3 +1,8 @@
+separador = function (ejercicio) {
+  cat("\n\n=------------------------- Ejercicio Nº",ejercicio," -------------------------->\n\n")
+}
+
+separador(1)
 acciones_vendidas = c(200, 300, 500, 300)
 
 precios = matrix(
@@ -15,7 +20,7 @@ print(resultado)
 rm(list = ls())
 
 #<------------------------------------->
-
+separador(2)
 muebles = matrix(
   c(1000, 8000, 8000, 6000, 4000, 6000),
   ncol = 3,
@@ -40,7 +45,7 @@ print(resultado)
 rm(list = ls())
 
 #<------------------------------------->
-
+separador(3)
 lavadoras = matrix(
   c(400, 300, 200, 100, 50, 30),
   ncol = 2,
@@ -66,8 +71,8 @@ print(resultado)
 
 rm(list = ls())
 
-#<------------------------------------->
-
+#<-------------------------------------------------------------------------------------------------------------------------> no esta listo
+separador(4)
 
 lingotes = matrix(
   c(20, 30, 40, 30, 40, 50, 40, 50, 90),
@@ -79,8 +84,8 @@ nuevo_lingote = c(34, 46, 67)
 
 rm(list = ls())
 
-#<------------------------------------->
-
+#<-------------------------------------------------------------------------------------------------------------------------> no esta listo
+separador(5)
 minas = matrix(
   c(1, 2, 3, 2, 5, 7, 1, 3, 1),
   ncol = 3,
@@ -101,16 +106,14 @@ print (resultado)
 
 rm(list = ls())
 
-#<------------------------------------->
-
+#<------------------------------------------------------------------------------------------------------------------------> no esta listo
+separador(6)
 
 hijo_uno = 20
-
 hijo_dos = 5
 
 
 suma_hijos = (hijo_uno + hijo_dos)
-
 edad_padre = (suma_hijos)*2
 
 
@@ -133,7 +136,7 @@ cat(x150)
 rm(list = ls())
 
 #<------------------------------------->
-
+separador(7)
 conservas = matrix(
   c(48, 62, 30, 30, 84, 26),
   ncol = 3,
@@ -154,7 +157,7 @@ cat("por semana se venden", ventas_semanales, "latas")
 rm(list = ls())
 
 #<------------------------------------->
-
+separador(8)
 bandejas = matrix(
   c(40, 160, 80, 120, 120, 120, 150, 80, 80),
   ncol = 3,
@@ -185,10 +188,25 @@ print(importe_por_queso)
   
 cat("kg de fontina, roquefort y camembert vendidos respectivamente",kg_vendidos)
 
+# <------------------------------------->
+separador(9)
+familias = matrix(
+  c(2,1, 3,1, 1,2),
+  byrow = TRUE,
+  ncol = 2
+)
+print(familias)
+colnames(familias) = c("dobles", "sencillas")
+rownames(familias) = c("A", "B", "C")
 
+hoteles = matrix(
+  c(84,45, 86,43, 85,44),
+  byrow = TRUE,
+  ncol = 2
+)
 
-
-
+colnames(hoteles) = c("dobles", "sencillas")
+rownames(hoteles) = c("H!", "H2", "H3")
 
 
 
