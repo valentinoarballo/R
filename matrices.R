@@ -195,60 +195,24 @@ familias = matrix(
   byrow = TRUE,
   ncol = 2
 )
-print(familias)
+
 colnames(familias) = c("dobles", "sencillas")
 rownames(familias) = c("A", "B", "C")
 
 hoteles = matrix(
   c(84,45, 86,43, 85,44),
-  byrow = TRUE,
-  ncol = 2
+  nrow = 2
 )
 
-colnames(hoteles) = c("dobles", "sencillas")
-rownames(hoteles) = c("H!", "H2", "H3")
+rownames(hoteles) = c("dobles", "sencillas")
+colnames(hoteles) = c("H1", "H2", "H3")
 
+print(familias)
+print(hoteles)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+gastos_por_dia = familias %*% hoteles
+cat("gastos por dia de cada familia")
+gastos_por_dia
+gastos_10_dias = familias %*% (hoteles*10)
+cat("gastos de cada familia si permanecen durante 10 dias")
+gastos_10_dias
