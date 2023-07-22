@@ -77,10 +77,45 @@ separador(4)
 lingotes = matrix(
   c(20, 30, 40, 30, 40, 50, 40, 50, 90),
   nrow = 3, 
-  byrow = TRUE
+  ncol = 3
 )
- 
-nuevo_lingote = c(34, 46, 67)
+rownames(lingotes) = c("L1","L2","L3")
+colnames(lingotes) = c("Oro","Plata","Cobre")
+
+lingotes
+
+cat("masa total de cada lingote:")
+
+masaTotal = rowSums(lingotes)
+masaTotal
+
+nuevo_lingote = matrix(
+  c(34, 46, 67),
+  nrow = 1,
+  ncol = 3
+  )
+rownames(nuevo_lingote) = c("L4")
+colnames(nuevo_lingote) = c("Oro","Plata","Cobre")
+
+nuevo_lingote
+
+masaTotalNuevoLingote = rowSums(nuevo_lingote)
+masaTotalNuevoLingote
+
+
+#resuelvo las incognitas
+incognitas = qr.solve(lingotes, t(nuevo_lingote))
+colnames(incognitas) = "%"
+rownames(incognitas) = c("L1","L2","L3")
+incognitas * 100
+
+# masa correspondiente
+partes = incognitas * masaTotal
+rownames(partes) = c("L1","L2","L3")
+colnames(partes) = "gramos en L4"
+
+partes
+
 
 rm(list = ls())
 

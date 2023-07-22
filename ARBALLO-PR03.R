@@ -7,14 +7,14 @@ separador = function (ejercicio) {
 }
 
 separador(1)
-puntuaciones = c(13, 14, 15, 16, 18, 19, 20, 22)
-frecuencias = c(3, 1, 5, 4, 3, 1, 2, 1)
+puntuaciones = c(0, 13, 14, 15, 16, 18, 19, 20, 22, 0)
+frecuencias = c(0, 3, 1, 5, 4, 3, 1, 2, 1, 0)
 
-puntuacionesDataFrame = data.frame(puntuaciones = c(0, puntuaciones, 0), frecuencias = c(0, frecuencias, 0))
+puntuacionesDataFrame = data.frame(puntuaciones = puntuaciones, frecuencias = frecuencias)
 
 ggplot(puntuacionesDataFrame, aes(x = puntuaciones, y = frecuencias)) +
   geom_point() +
-  geom_freqpoly() +
+  geom_line() +
   xlab("Puntiaciones") +
   ylab("Frecuencias") + 
   ggtitle("Calificaciones de un grupo de alumnos") +
