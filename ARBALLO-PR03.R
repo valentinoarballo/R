@@ -19,7 +19,7 @@ ggplot(puntuacionesDataFrame, aes(x = puntuaciones, y = frecuencias)) +
   scale_x_continuous(limits = c(10, 24), breaks = seq(10, 24, by = 1)) +
   scale_y_continuous(limits = c(0, 6), breaks = seq(0, 6, by = 1))
 
-separador(1)
+separador(2)
 
 
 rm(list = ls())
