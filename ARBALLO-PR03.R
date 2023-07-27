@@ -63,6 +63,23 @@ ggplot(empleadosDataFrame, aes(x = puntosMedios4, y = frecuencias4)) +
   scale_y_continuous(limits = c(0, 17), breaks = seq(0, 17, by = 1)) 
 
 
+separador(5)
+limites_inferiores5 = c(3, 11, 19, 27, 35, 43)
+limites_superiores5 = c(11, 19, 27, 35, 43, 51)
+frecuencias5 = c(2, 6, 6, 11, 12, 3)
 
+intervalos5 = data.frame(limites_inferiores5 = limites_inferiores5,
+                         limites_superiores5 = limites_superiores5,
+                         frecuencias5 = frecuencias5)
+
+puntosMedios5 = (intervalos5$limites_inferiores5 + intervalos5$limites_superiores5) / 2
+
+alumnnosDataFrame = data.frame(puntosMedios5 = puntosMedios5, frecuencias5 = frecuencias5)
+
+ggplot(alumnnosDataFrame, aes(x = puntosMedios5, y = frecuencias5)) +
+  geom_bar(stat = "identity") +
+  geom_line(na.rm = FALSE, stat = "identity") +
+  scale_x_continuous(limits = c(0, 52), breaks = seq(3, 52, by = 8)) +
+  scale_y_continuous(limits = c(0, 13), breaks = seq(0, 13, by = 1)) 
 # rm(list = ls())
 
