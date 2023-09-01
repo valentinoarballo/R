@@ -1,4 +1,7 @@
+# > Installo la libreria con la que voy a trabajar, se llama ggplot2
 install.packages("ggplot2")
+# > Elegi esta libreria principalmente por su popularidad, note que es una de las mas utilizadas
+# > Tiene una comunidad grande y muchos recursos educativos en internet
 library(ggplot2)
 
 separador = function (ejercicio) {
@@ -22,12 +25,12 @@ media = function (valores) {
 mediana = function (valores) {
   valores_ordenados = sort(valores)
   n = length(valores_ordenados)
-  # si n es impar 
+  # > Si n es impar 
   if (n %% 2 == 1) {
-    # se le asigna a mediana el valor unico central del conjunto de datos
+    # > Se le asigna a mediana el valor unico central del conjunto de datos
     mediana = valores_ordenados[(n+1)/2]
   } else { # si es par
-    # agarro los dos valores adyacentes al centro y le asigno a mediana el promedio de estos dos 
+    # > Agarro los dos valores adyacentes al centro y le asigno a mediana el promedio de estos dos 
     mediana = mean(valores_ordenados[c(n/2, n/2+1)])
   }
   cat("mediana:", mediana)
@@ -35,19 +38,19 @@ mediana = function (valores) {
 }
 
 desviacion_media = function (valores){
-  # imprimo la sumatoria de diferencias asolutas de cada valor a su media dividido por length de valores
+  # > Imprimo la sumatoria de diferencias asolutas de cada valor a su media dividido por length de valores
   cat("desviacion media:", sum(abs(valores - media(valores)))/length(valores))
 }
 
 varianza = function (valores, poblacion = TRUE){
-  # acumulador representa la sumatoria de diferencias al cuadrado  
+  # > Acumulador representa la sumatoria de diferencias al cuadrado  
   acumulador = sum((valores - media(valores))^2)
-  # si es poblacion
+  # > Si es poblacion
   if (poblacion) {
-    # dividir por la cantidad de datos
+    # > Dividir por la cantidad de datos
     cat("varianza:", acumulador/length(valores), "\n")
   } else { # si es una muestra
-    # dividir pero antes restarle 1 a length(valores)
+    # > Dividir pero antes restarle 1 a length(valores)
     cat("varianza:", acumulador/(length(valores)-1), "\n")
     cat("varianza funcion R var():", var(valores, na.rm = TRUE))
   }
@@ -63,7 +66,7 @@ desviacion_tipica = function (valores, poblacion = TRUE) {
   }
 }
 
-# hago una funcion para llamar funciones, asi es mas comodo si necesito conocer todas las medidas de dispersion
+# > Hago una funcion para llamar funciones, asi es mas comodo si necesito conocer todas las medidas de dispersion
 principales_medidas_dispercion = function (valores, poblacion = TRUE) {
   cat(desviacion_media(valores), "\n")
   cat(rango(valores), "\n")
@@ -76,7 +79,7 @@ principales_medidas_dispercion = function (valores, poblacion = TRUE) {
   }
 }
 
-# esta funcion llama a la media, moda y mediana ademas de llamar a la funcion de arriba
+# > Esta funcion llama a la media, moda y mediana ademas de llamar a la funcion de arriba
 calcular_todo = function (valores, poblacion = TRUE) {
   cat("media: ",media(valores), "\n")
   cat(moda(valores), "\n")
@@ -116,9 +119,9 @@ datos_intervalos = data.frame(LimiteInferior = limites_inferiores,
 cat("Las alturas de los jugadores de un equipo de baloncesto vienen dadas por la tabla:")
 print(datos_intervalos)
 
-# ahora necesitaria sacar el valor medio de cada intervalo para poder trabajarlo
+# > Ahora necesitaria sacar el valor medio de cada intervalo para poder trabajarlo
 puntosMedios = (datos_intervalos$LimiteInferior + datos_intervalos$LimiteSuperior) / 2
-# uso el operador $ para acceder a los datos de la columna y asi poder calcular su media
+# > Uso el operador $ para acceder a los datos de la columna y asi poder calcular su media
 cat("media: ", media(puntosMedios))
 cat("media funcion R mean(): ", mean(puntosMedios))
 moda(puntosMedios)
@@ -131,10 +134,9 @@ cat("un siquiatra local ha considerado una muestra aleatoria de 20 niños, anota
 calcular_todo(valores8, poblacion = FALSE)
 
 valores8DataFrame = data.frame(horas = valores8, kids = rep("niñ@s con mala conducta", length(valores8)))
-# paso los datos a un data frame para tener una especie de matriz pero que cada fila represente una variable/dato y cada columna una instancia de datos
+# > Paso los datos a un data frame para que cada fila represente una variable/dato y cada columna una instancia de datos
 
-# con la libreria ggplot especifico las variables que voy a usar para representar los ejes del grafico, con la funcion aes()
-# OJO que los graficos de esta libreria se ve que se ajustan al tamaño de la ventana, si sale aplastado nada mas hay que expandir la ventana plots
+# > Con la libreria ggplot especifico las variables que voy a usar para representar los ejes del grafico, con la funcion aes()
 ggplot(valores8DataFrame, aes(x = kids, y = horas)) + 
 # geom_boxplot() es la funcion que se encarga de dibujar el grafico
   geom_boxplot() +
