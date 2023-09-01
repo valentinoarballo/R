@@ -161,19 +161,17 @@ correlacion10DataFrame = data.frame(servicio10, horas10)
 
 # > Grafico la regresion con ggplot2
 ggplot(correlacion10DataFrame, aes(x = servicio10, y = horas10)) +
-# geom_point() dibuja los puntitos
+# > geom_point() dibuja los puntos
   geom_point() +
-# uso geom_smooth() para agregar una linea encima de los puntos
-# el parametro method = "lm" especifica que voy a usar el metodo de ajuste lineal (regresion lineal) para trazar la linea de ajuste
-# el metodo "lm" usa el algoritmo de minimos cuadrados para encontrar la mejor linea recta que se ajuste a los datos
-# pongo se = FALSE  para desactivar el sombreado del intervalo de confianza alrededor de la linea de ajudte
+# > Uso geom_smooth() para agregar una linea encima de los puntos
+# > El parametro method = "lm" especifica que voy a usar el metodo de ajuste lineal (regresion lineal) para trazar la linea de ajuste
+# > El metodo "lm" usa el algoritmo de minimos cuadrados para encontrar la mejor linea recta que se ajuste a los datos
+# > Pongo se = FALSE  para desactivar el sombreado del intervalo de confianza alrededor de la linea de ajudte
   geom_smooth(method = "lm", se = FALSE) +
-# aca solo pongo titulos, al grafico y a los ejes
+# > Aca solo pongo titulos, al grafico y a los ejes
   labs(title = "Correlacion entre Servicio y Horas", x = "Servicio", y = "Horas") +
-# geom_text() sirve para poner un texto en el grafico, le digo en que posicion de x e y lo quiero
-# ademas uso paste() que es de R para poder pasarlo como string y variable 
+# > geom_text() sirve para poner un texto en el grafico, le digo en que posicion de x e y lo quiero
   geom_text(x = 4, y = 1, label = paste("Correlacion:", round(correlacion10, 2)), color = "black") +
-# esto lo vi en un foro de R, solamente hace que el grafico sea un poco mas lindo
   theme_minimal()
 
 

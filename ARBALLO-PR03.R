@@ -1,7 +1,6 @@
 # > Installo la libreria con la que voy a trabajar, se llama ggplot2
 install.packages("ggplot2")
-# > Elegi esta libreria principalmente por su popularidad, note que es una de las mas utilizadas
-# > Tiene una comunidad grande y muchos recursos educativos en internet
+
 library(ggplot2)
 
 separador = function (ejercicio) {
@@ -14,7 +13,7 @@ separador(1)
 puntuaciones = c(13, 13, 14, 15, 16, 18, 19, 20, 22, 22)
 frecuencias = c(0, 3, 1, 5, 4, 3, 1, 2, 1, 0)
 
-# > Aca creo un marco de datos que relaciona las puntuaciones con las frecuencias.
+# > Aca creo un marco de datos/data frame que relaciona las puntuaciones con las frecuencias.
 # > Cada fila en el marco de datos representa una puntuacion y su frecuencia.
 puntuacionesDataFrame = data.frame(puntuaciones = puntuaciones, frecuencias = frecuencias)
 
