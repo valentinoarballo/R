@@ -138,18 +138,15 @@ valores8DataFrame = data.frame(horas = valores8, kids = rep("niñ@s con mala con
 
 # > Con la libreria ggplot especifico las variables que voy a usar para representar los ejes del grafico, con la funcion aes()
 ggplot(valores8DataFrame, aes(x = kids, y = horas)) + 
-# geom_boxplot() es la funcion que se encarga de dibujar el grafico
+# > geom_boxplot() es la funcion que se encarga de dibujar el grafico
   geom_boxplot() +
   scale_y_continuous(limits = c(6, 11), breaks = seq(6, 11, 1))
-# la funcion "scale_y_continuous" la uso para poner limites en la escala vertical (6 a 11)
-# la precision de la escala (1) es para los valores de los intervalos, esto se determina con el tercer parametro de seq() que despues termina asignandose a breaks
 
 separador(9)
 valores9 = c(10.5, 11.3, 11.9, 12, 12.3, 12.3, 12.5, 12.7, 13.4, 13.7, 13.8, 14.2, 14.8, 15.1, 15.3, 16.7, 16.8, 18.8, 20.8)
 cat("Dos profesores estan interesados en estudiar los habitos de sueño de los estudiantes en sus clases.\n Los datos del Profesor B son los siguientes:", valores9)
 
 valores9DataFrame = data.frame(minutos = valores9, alumnos = rep("alumnos que se duermen en clase", length(valores9)))
-# otro grafico como el del punto 8
 ggplot(valores9DataFrame, aes(x = alumnos, y = minutos)) + 
   geom_boxplot() +
   scale_y_continuous(limits = c(10, 22), breaks = seq(10, 22, 1))
@@ -162,7 +159,7 @@ horas10 = c(1, 1, 3, 4, 6, 5)
 correlacion10 = cor(servicio10, horas10)
 correlacion10DataFrame = data.frame(servicio10, horas10)
 
-# grafico la regresion con ggplot2
+# > Grafico la regresion con ggplot2
 ggplot(correlacion10DataFrame, aes(x = servicio10, y = horas10)) +
 # geom_point() dibuja los puntitos
   geom_point() +
