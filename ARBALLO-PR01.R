@@ -51,7 +51,7 @@ media_cuadratica = function (valores) {
 }
 
 media_geometrica = function (valores) {
-  media_geometrica = (prod(valores)^(1/(length(valores)))) #(geometric.mean(valores))
+  media_geometrica = (prod(valores)^(1/(length(valores))))
   cat("media geometrica: ", media_geometrica)
 }
 
@@ -127,7 +127,6 @@ valores8 = c(15, 16, 19, 15, 14, 16, 20, 15, 17)
 cat("Buscar la media, la mediana y la moda de los siguientes números:\n", valores8)
 media_moda_mediana(valores8)
 
-
 separador(9)
 valores9 = c(69, 73, 65, 70, 71, 74, 65, 69, 60, 62)
 cat("En un estudio que se realizó en un asilo de ancianos, se tomó las edades de los que pueden caminar sin dificultades. Buscar la media, la mediana y la moda de las siguientes edades, e indicar si es muestra o población. No utilice la fórmula.\nA menos que en el asilo vivan 10 personas estos datos solo representan un muestra\nmuestra: ", valores9)
@@ -144,6 +143,5 @@ cat("En una importante empresa láctea hay: 600 empleados que cobran $400, 500 q
 valores11 = c(rep(400, 600), rep(600, 500), rep(2200, 100), rep(100000, 5))
 media_moda_mediana(valores11)
 
-rm(list = ls())
 
 
