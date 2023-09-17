@@ -6,58 +6,73 @@ separador = function (ejercicio) {
   cat("\n\n<-------------------------- Ejercicio Nº",ejercicio," -------------------------->\n\n")
 }
 
+# Función para calcular la moda de un conjunto de datos
 moda = function(x) {
   ux = unique(x)
   cat("moda: ", ux [which.max(tabulate(match(x, ux)))])
 }
 
+# Función para calcular la media de un conjunto de valores
 media = function (valores) {
   acumulador = 0
+  # Calcula la suma de los valores
   for (valor in valores) {
     acumulador = acumulador + valor
   }
-  media = (acumulador/length(valores))
+  media = (acumulador/length(valores)) # Calcula la media
   cat("media:", media)
   cat("media funcion R:", mean(valores))
 }
 
+# Función para calcular la media ponderada de un conjunto de valores con pesos
 media_ponderada = function (valores, pesos) {
   acumulador = 0
+  # Calcula la suma ponderada de los valores
   for (x in 1:length(valores)) {
    valor = valores[x]
    peso = pesos[x]
+   # Calcula la suma ponderada de los valores
    acumulador = acumulador + (valor*peso)
   }
+  # Calcula la media ponderada
   media_ponderada = (acumulador/sum(pesos))
   cat("media ponderada: ", media_ponderada)
 }
 
+# Función para calcular la media armónica de un conjunto de valores
 media_armonica = function (valores) {
   acumulador = 0
+  # Calcula la suma de los inversos de los valores
   for (valor in valores) {
     acumulador = acumulador + (1/valor)
   }
+  # Calcula la media armónica
   media_armonica = (length(valores)/acumulador)
   cat("media armonica: ", media_armonica)
 }
 
+# Función para calcular la media cuadrática de un conjunto de valores
 media_cuadratica = function (valores) {
   acumulador = 0
   for (valor in valores) {
     acumulador = acumulador + (valor^2)
   }
+  # Calcula la media cuadrática
   media_cuadratica = (sqrt(acumulador/length(valores)))
   cat("media cuadratica: ", media_cuadratica)
 }
 
+# Función para calcular la media geométrica de un conjunto de valores
 media_geometrica = function (valores) {
   media_geometrica = (prod(valores)^(1/(length(valores))))
   cat("media geometrica: ", media_geometrica)
 }
 
+# Función para calcular la mediana de un conjunto de valores
 mediana = function (valores) {
   valores_ordenados = sort(valores)
   n = length(valores_ordenados)
+  # Calcula la mediana dependiendo si la cantidad de valores es par o impar
   if (n %% 2 == 1) {
     mediana = valores_ordenados[(n+1)/2]
   } else {
@@ -66,12 +81,14 @@ mediana = function (valores) {
   cat("mediana: ", mediana)
 }
 
+# Función para calcular la media, moda y mediana de un conjunto de valores
 media_moda_mediana = function (valores) {
   cat(media(valores), "\n")
   cat(moda(valores), "\n")
   cat(mediana(valores), "\n")
 }
 
+# Función para calcular todas las medidas estadísticas de un conjunto de valores
 calcular_todo = function (valores, pesos) {
   media_moda_mediana(valores)
   cat(media_ponderada(valores, pesos), "\n")
