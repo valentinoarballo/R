@@ -9,9 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="vale" />
+<meta name="author" content="solodolor" />
 
-<meta name="date" content="2023-08-28" />
+<meta name="date" content="2023-09-17" />
 
 <title>ARBALLO-PR03.R</title>
 
@@ -351,19 +351,17 @@ display: none;
 
 
 <h1 class="title toc-ignore">ARBALLO-PR03.R</h1>
-<h4 class="author">vale</h4>
-<h4 class="date">2023-08-28</h4>
+<h4 class="author">solodolor</h4>
+<h4 class="date">2023-09-17</h4>
 
 </div>
 
 
 <pre class="r"><code># &gt; Installo la libreria con la que voy a trabajar, se llama ggplot2
 install.packages(&quot;ggplot2&quot;)</code></pre>
-<pre><code>## Installing package into &#39;/home/vale/R/x86_64-pc-linux-gnu-library/4.3&#39;
+<pre><code>## Installing package into &#39;/home/solodolor/R/x86_64-pc-linux-gnu-library/4.3&#39;
 ## (as &#39;lib&#39; is unspecified)</code></pre>
-<pre class="r"><code># &gt; Elegi esta libreria principalmente por su popularidad, note que es una de las mas utilizadas
-# &gt; Tiene una comunidad grande y muchos recursos educativos en internet
-library(ggplot2)
+<pre class="r"><code>library(ggplot2)
 
 separador = function (ejercicio) {
   cat(&quot;&lt;------------------------- Ejercicio Nº&quot;,ejercicio,&quot; --------------------------&gt;&quot;)
@@ -376,7 +374,7 @@ separador(1)</code></pre>
 puntuaciones = c(13, 13, 14, 15, 16, 18, 19, 20, 22, 22)
 frecuencias = c(0, 3, 1, 5, 4, 3, 1, 2, 1, 0)
 
-# &gt; Aca creo un marco de datos que relaciona las puntuaciones con las frecuencias.
+# &gt; Aca creo un marco de datos/data frame que relaciona las puntuaciones con las frecuencias.
 # &gt; Cada fila en el marco de datos representa una puntuacion y su frecuencia.
 puntuacionesDataFrame = data.frame(puntuaciones = puntuaciones, frecuencias = frecuencias)
 
